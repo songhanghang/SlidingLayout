@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SlidingLayout">
+        <!-- handle bar view id-->
+        <attr name="handle_id" format="reference" />
+    </declare-styleable>
+</resources>
