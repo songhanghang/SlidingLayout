@@ -179,6 +179,18 @@ public class HalfPlayCardFragment extends Fragment implements View.OnClickListen
         arrayAdapter.add("我是第15行");
         arrayAdapter.add("我是第16行");
         arrayAdapter.add("我是第17行");
+        arrayAdapter.add("我是第18行");
+        arrayAdapter.add("我是第19行");
+        arrayAdapter.add("我是第20行");
+        arrayAdapter.add("我是第21行");
+        arrayAdapter.add("我是第22行");
+        arrayAdapter.add("我是第23行");
+        arrayAdapter.add("我是第24行");
+        arrayAdapter.add("我是第25行");
+        arrayAdapter.add("我是第26行");
+        arrayAdapter.add("我是第27行");
+        arrayAdapter.add("我是第28行");
+        arrayAdapter.add("我是第29行");
         gridView.setAdapter(arrayAdapter);
         slidingLayout.setContentView(gridView);
         slidingLayout.openFormOrigin();
