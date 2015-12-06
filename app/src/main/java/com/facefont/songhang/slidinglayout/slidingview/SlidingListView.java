@@ -27,21 +27,6 @@ public class SlidingListView extends ListView {
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent ev) {
-
-        int action = ev.getAction();
-        switch (action) {
-            case MotionEvent.ACTION_UP:
-                if (onBorderListener != null) {
-                    onBorderListener.onContentActionUp();
-                }
-                break;
-        }
-        return super.onTouchEvent(ev);
-    }
-
-
-    @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
     }

@@ -15,6 +15,4 @@ public interface OnContentBorderListener {
      * 到达底部
      */
     void onContentReachBottom();
-    //点击区域松开时
-    void onContentActionUp();
 }

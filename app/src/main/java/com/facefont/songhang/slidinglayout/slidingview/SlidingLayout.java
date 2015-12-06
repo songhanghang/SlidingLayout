@@ -51,6 +51,7 @@ public class SlidingLayout extends LinearLayout implements OnContentBorderListen
         super(context, attrs, defStyleAttr);
         getStyleable(context, attrs, defStyleAttr);
     }
+
     public void setContentView(View view) {
         this.contentView = view;
         if (this.contentView == null)
@@ -61,6 +62,16 @@ public class SlidingLayout extends LinearLayout implements OnContentBorderListen
             removeViewAt(1);
         }
         addView(contentView);
+    }
+
+    public void onContentActionUp() {
+        if (enAbleSlide) {
+            if (maxHeight - getY() <= maxHeight / 5 * 4) {
+                closeAnim(false);
+            } else {
+                openAnim(false);
+            }
+        }
     }
 
     private void getStyleable(final Context context, final AttributeSet attributeSet, final int defStyleAttr) {
@@ -256,16 +267,5 @@ public class SlidingLayout extends LinearLayout implements OnContentBorderListen
     @Override
     public void onContentReachBottom() {
 
-    }
-
-    @Override
-    public void onContentActionUp() {
-        if (enAbleSlide) {
-            if (maxHeight - getY() <= maxHeight / 5 * 4) {
-                closeAnim(false);
-            } else {
-                openAnim(false);
-            }
-        }
     }
 }
