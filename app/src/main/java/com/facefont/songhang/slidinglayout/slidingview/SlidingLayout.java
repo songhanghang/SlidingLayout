@@ -15,12 +15,12 @@ import com.facefont.songhang.slidinglayout.R;
 
 /**
  * Created by songhang on 15/11/10.
- * 滑动服布局布局
+ * 滑动布局
  */
 public class SlidingLayout extends LinearLayout implements OnContentBorderListener {
     private static final long ANIM_DURATION = 300; //动画时间
     private int maxHeight; //最大高度
-    private int handleId;
+    private int handleId; 
     private boolean isTop; //是否到达顶部
     private Rect rectFrame = new Rect();
     private boolean isHandleTarcking; //是否handle开始滑动
