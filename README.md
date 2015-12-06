@@ -7,7 +7,7 @@ this project was born in letv video android app http://www.letv.com/
 
 # usage
 * set SlidingLayouut in your xml 
-* set handle view id (handle view is layout bar, everytime you can touch it)
+* set handle view ( handle view is layout bar, everytime you can touch it)
 ```xml
 <com.facefont.songhang.slidinglayout.slidingview.SlidingLayout
         android:id="@+id/slidingview"
