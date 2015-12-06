@@ -8,6 +8,7 @@ this project was born in letv video android app http://www.letv.com/
 # usage
 set SlidingLayouut in your xml 
 set the handle view id (this handle view is the layout bar, everytime you can touch it)
+
 <com.facefont.songhang.slidinglayout.slidingview.SlidingLayout
         android:id="@+id/slidingview"
         android:layout_width="match_parent"
@@ -22,7 +23,7 @@ set the handle view id (this handle view is the layout bar, everytime you can to
         </RelativeLayout>
 </com.facefont.songhang.slidinglayout.slidingview.SlidingLayout>
 
-in you activity or fragment you find SlidingLayout
+in you activity or fragment find SlidingLayout
 then you can dynamic replace contentView { setContentView(SlidingView contentView) } binding with  SlidingLayout.
 
 the contentView will Sliding with SlidingLayout without conflict。
