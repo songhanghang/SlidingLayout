@@ -8,15 +8,13 @@ import android.view.MotionEvent;
 public interface OnContentBorderListener {
     /**
      * 到达顶部
-     * @param rawY 当前触摸位置
      */
-    void onContentReachTop(float rawY);
+    void onContentReachTop();
 
     /**
      * 到达底部
-     * @param rawY
      */
-    void onContentReachBottom(float rawY);
+    void onContentReachBottom();
     //点击区域松开时
     void onContentActionUp();
 }

@@ -10,7 +10,6 @@ import android.widget.ListView;
  */
 public class SlidingListView extends ListView {
     private OnContentBorderListener onBorderListener;
-    private float curDownY; //当前按下位置
     public SlidingListView(Context context) {
         this(context, null);
     }
@@ -32,9 +31,6 @@ public class SlidingListView extends ListView {
 
         int action = ev.getAction();
         switch (action) {
-            case MotionEvent.ACTION_MOVE:
-                curDownY = ev.getRawY();
-                break;
             case MotionEvent.ACTION_UP:
                 if (onBorderListener != null) {
                     onBorderListener.onContentActionUp();
@@ -55,9 +51,9 @@ public class SlidingListView extends ListView {
     protected boolean overScrollBy(int deltaX, int deltaY, int scrollX, int scrollY, int scrollRangeX, int scrollRangeY, int maxOverScrollX, int maxOverScrollY, boolean isTouchEvent) {
         if (onBorderListener != null && isTouchEvent) {
                 if (deltaY < 0) {
-                    onBorderListener.onContentReachTop(curDownY);
+                    onBorderListener.onContentReachTop();
                 } else if (deltaY > 0) {
-                    onBorderListener.onContentReachBottom(curDownY);
+                    onBorderListener.onContentReachBottom();
                 }
             }
         return super.overScrollBy(deltaX, deltaY, scrollX, scrollY, scrollRangeX, scrollRangeY, maxOverScrollX, maxOverScrollY, isTouchEvent);

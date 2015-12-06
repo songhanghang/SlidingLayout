@@ -10,7 +10,6 @@ import android.widget.GridView;
  */
 public class SlidingGridView extends GridView {
     private OnContentBorderListener onBorderListener;
-    private float curDownY; //当前按下位置
 
     public SlidingGridView(Context context) {
         super(context);
@@ -33,9 +32,6 @@ public class SlidingGridView extends GridView {
 
         int action = ev.getAction();
         switch (action) {
-            case MotionEvent.ACTION_MOVE:
-                curDownY = ev.getRawY();
-                break;
             case MotionEvent.ACTION_UP:
                 if (onBorderListener != null) {
                     onBorderListener.onContentActionUp();
@@ -55,9 +51,9 @@ public class SlidingGridView extends GridView {
         if (onBorderListener != null) {
             if (isTouchEvent) {
                 if (deltaY < 0) {
-                    onBorderListener.onContentReachTop(curDownY);
+                    onBorderListener.onContentReachTop();
                 } else if (deltaY > 0) {
-                    onBorderListener.onContentReachBottom(curDownY);
+                    onBorderListener.onContentReachBottom();
                 }
             }
         }

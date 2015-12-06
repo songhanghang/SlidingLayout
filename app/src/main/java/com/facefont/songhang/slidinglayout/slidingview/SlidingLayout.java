@@ -21,13 +21,15 @@ public class SlidingLayout extends LinearLayout implements OnContentBorderListen
     private static final long ANIM_DURATION = 300; //动画时间
     private int maxHeight; //最大高度
     private int handleId;
-    private View handleBar; // 顶部拖动view
-    private View contentView; // 内容的View
+    private boolean isTop; //是否到达顶部
     private Rect rectFrame = new Rect();
     private boolean isHandleTarcking; //是否handle开始滑动
     private float downY; //按下时的位置
     private boolean enAbleSlide = true; //是否可以滑动
     private OnSlidingListener onSlidingListener;
+
+    private View handleBar; // 顶部拖动view
+    private View contentView; // 内容的View
 
     public void setOnSlidingListener(OnSlidingListener onSlidingListener) {
         this.onSlidingListener = onSlidingListener;
@@ -243,18 +245,16 @@ public class SlidingLayout extends LinearLayout implements OnContentBorderListen
         objectAnimator.start();
     }
 
-    boolean isTop;
     @Override
-    public void onContentReachTop(float rawY) {
+    public void onContentReachTop() {
         if (enAbleSlide) {
-            downY = rawY;
             isTop = true;
             requestDisallowInterceptTouchEvent(false);
         }
     }
 
     @Override
-    public void onContentReachBottom(float moveY) {
+    public void onContentReachBottom() {
 
     }
 
